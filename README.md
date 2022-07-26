@@ -12,8 +12,8 @@ You work at a startup that is building a new and disruptive platform called Fint
 The code enables your customers to send cryptocurrency payments to fintech professionals. To develop the code and test it out, you will assume the perspective of a Fintech Finder customer who is using the application to find a fintech professional and pay them for their work. 
 
 ---
-
 ## Evaluation Results
+
 
 Review the transaction hash code associated with the validated blockchain transaction.
 
@@ -40,8 +40,7 @@ Once you receive the transaction’s hash code, you will navigate to the Transac
  ### **Tune the Baseline Trading Algorithm**
  1.  
 
-___
-
+---
 ## Technologies
 
 The software operates on python 3.9 with the installation package imports embedded with Anaconda3 installation. The application was developed in VSCode 1.69.2, using the python 3.10 language and Streamlit v1.10.0. Below are installation sites and libraries for imported tools to run the program.  The application for GUI uses Streamlit to create and run the blockchain ledger and validate it. 
@@ -70,17 +69,28 @@ pip install eth-tester==0.5.0b3                # provides access to the tools to
 pip install mnemonic                           # generates BIP-39 standard 12 or 24-word mnemonic seed phrases.
 pip install bip44                              # derives hierarchical deterministic wallets from a seed phrase.
 ```
+for crypto_wallet.py:
 ```
-import pandas as pd
+import os
+import requests
+from dotenv import load_dotenv
+load_dotenv()
+from bip44 import Wallet
+from web3 import Account
+from web3 import middleware
+from web3.gas_strategies.time_based import medium_gas_price_strategy
+```
+for fintech_finder.py: 
+```
 import streamlit as st                             # Python library for building web interfaces for Python apps from dataclasses import dataclass
 from typing import Any, List
-import datetime as datetime
-import pandas as pd
-import hashlib                                   
+from web3 import Web3
+w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 ```
 
 ---
-# Usage
+
+## Usage
 
 This application is launched from the VSCode terminal utilizing Pandas and scikitlearn `StandardScaler` to preprocess data for categorical variables in the ML algorithm model computations. Scikit ML models are tunable by adjusting input features to find parameters that result in the best outcomes for different trading strategies and adapt to market environments. While `classification_report` illustrates the evaluation metrics such as accuracy, precision and recall.    
 
@@ -93,8 +103,10 @@ The program is developed in VSCode using python language **.py** file. The Pytho
 
 
 ```
-python
-pychain.py
+python 
+crypto_wallet.py
+fintech_finder.py 
+
 ```
  
 
