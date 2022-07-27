@@ -43,7 +43,7 @@ Once you receive the transaction’s hash code, you will navigate to the Transac
 ---
 ## Technologies
 
-The software operates on python 3.9 with the installation package imports embedded with Anaconda3 installation. The application was developed in VSCode 1.69.2, using the python 3.10 language and Streamlit v1.10.0. Below are installation sites and libraries for imported tools to run the program.  The application for GUI uses Streamlit to create and run the blockchain ledger and validate it. 
+The software operates on python 3.9 with the installation package imports embedded with Anaconda3 installation. The application was developed in Jupyter Lab 3.4.4 notebook, using Granache and Streamlit v1.10.0. Below are installation sites and libraries for imported tools to run the program.  The application for GUI uses Streamlit to create and run the blockchain transactions, ledgers and validations. 
 
 
 ---
@@ -52,12 +52,16 @@ The software operates on python 3.9 with the installation package imports embedd
 
 Before running the applications open your terminal to install and check for your installations. First navigate to the download instructions using the links below. Then verify if the installations have been completed. 
 
-* [python](https://www.python.org/downloads/)
+1. Install Anaconda and create your environment; `python` should be installed with Anaconda:
+* [python](https://www.python.org/downloads/) 
 
+2. Verify version in the terminal enter command `python` for information or download:
 * [anaconda3](https://docs.anaconda.com/anaconda/install/windows/e) 
 
-* [VSCode](https://code.visualstudio.com/download) 
+3. Install Ganache to setup a local blockchain to test and develop smart contracts in a local environment.: 
+* [Granache](https://trufflesuite.com/ganache/) 
 
+4. Install Streamlit to run the python code for the Blockchain Ledger in a GUI as a shareable web app: 
 * [streamlit](https://docs.streamlit.io/library/get-started/installation)
 
 
@@ -69,7 +73,7 @@ pip install eth-tester==0.5.0b3                # provides access to the tools to
 pip install mnemonic                           # generates BIP-39 standard 12 or 24-word mnemonic seed phrases.
 pip install bip44                              # derives hierarchical deterministic wallets from a seed phrase.
 ```
-for crypto_wallet.py:
+libraries and modules for crypto_wallet.py:
 ```
 import os
 import requests
@@ -80,12 +84,12 @@ from web3 import Account
 from web3 import middleware
 from web3.gas_strategies.time_based import medium_gas_price_strategy
 ```
-for fintech_finder.py: 
+libraries and mdules for fintech_finder.py: 
 ```
 import streamlit as st                             # Python library for building web interfaces for Python apps from dataclasses import dataclass
 from typing import Any, List
-from web3 import Web3
-w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
+from web3 import Web3                            # Python function for accessing latest blockchain ledger info  
+w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))  # connects to Web3 and Mnemonic provider Ganache  blockchain
 ```
 
 ---
