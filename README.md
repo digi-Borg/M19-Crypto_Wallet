@@ -26,7 +26,7 @@ Once you receive the transaction’s hash code, you will navigate to the Transac
 * A) 4. Verify the block contents and hashes in the Streamlit drop-down menu. Take a screenshot of the Streamlit application page, which should detail a blockchain that consists of multiple blocks. Include the screenshot in the README.md file for your Challenge repository: 
 ![StlitMultiBlock](Images/M18p3_2022-07-20215202.png)  
 
-![StlitMultiBlock2](Images/M18p5_2022-07-20235351.png)
+
 --
   
 * B) 5. Test the blockchain validation process by using the web interface. Take a screenshot of the Streamlit application page, which should indicate the validity of the blockchain:
@@ -43,7 +43,7 @@ Once you receive the transaction’s hash code, you will navigate to the Transac
 ---
 ## Technologies
 
-The software operates on python 3.9 with the installation package imports embedded with Anaconda3 installation. The application was developed in Jupyter Lab 3.4.4 notebook, using Granache and Streamlit v1.10.0. Below are installation sites and libraries for imported tools to run the program.  The application for GUI uses Streamlit to create and run the blockchain transactions, ledgers and validations. 
+The software operates on python 3.9 with the installation package imports embedded with Anaconda3 installation. The application was developed in VSCode 1.69, using Granache and Streamlit v1.10.0. Below are installation sites and libraries for imported tools to run the program.  The application for GUI uses Streamlit to create and run the blockchain transactions, ledgers and validations. 
 
 
 ---
@@ -58,10 +58,13 @@ Before running the applications open your terminal to install and check for your
 2. Verify version in the terminal enter command `python` for information or download:
 * [anaconda3](https://docs.anaconda.com/anaconda/install/windows/e) 
 
-3. Install Ganache to setup a local blockchain to test and develop smart contracts in a local environment.: 
+3. Install Visual Studio Code, or VS Code, IDE to write the program & run it in Streamlit app: 
+* [VSCode](https://code.visualstudio.com/download)
+
+4. Install Ganache to setup a local blockchain to test and develop smart contracts in a local environment.: 
 * [Granache](https://trufflesuite.com/ganache/) 
 
-4. Install Streamlit to run the python code for the Blockchain Ledger in a GUI as a shareable web app: 
+5. Install Streamlit to run the python code for the Blockchain Ledger in a GUI as a shareable web app: 
 * [streamlit](https://docs.streamlit.io/library/get-started/installation)
 
 
@@ -76,11 +79,11 @@ pip install bip44                              # derives hierarchical determinis
 libraries and modules for crypto_wallet.py:
 ```
 import os
-import requests
+import requests                                             # allows HTTP requests in order to send response data
 from dotenv import load_dotenv
 load_dotenv()
 from bip44 import Wallet
-from web3 import Account
+from web3 import Account                               # Python function for accessing latest blockchain ledger info
 from web3 import middleware
 from web3.gas_strategies.time_based import medium_gas_price_strategy
 ```
@@ -88,7 +91,7 @@ libraries and mdules for fintech_finder.py:
 ```
 import streamlit as st                             # Python library for building web interfaces for Python apps from dataclasses import dataclass
 from typing import Any, List
-from web3 import Web3                            # Python function for accessing latest blockchain ledger info  
+from web3 import Web3                              
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))  # connects to Web3 and Mnemonic provider Ganache  blockchain
 ```
 
@@ -96,10 +99,17 @@ w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))  # connects to Web3 and Mn
 
 ## Usage
 
-This application is launched from the VSCode terminal utilizing Pandas and scikitlearn `StandardScaler` to preprocess data for categorical variables in the ML algorithm model computations. Scikit ML models are tunable by adjusting input features to find parameters that result in the best outcomes for different trading strategies and adapt to market environments. While `classification_report` illustrates the evaluation metrics such as accuracy, precision and recall.    
+This application is launched from the VSCode terminal utilizing the above imported Python libraries and tools.The program is developed in VSCode using python language **.py** file to build the `cypto_wallet` and the `fintech_finder`. `Web3` allows remote procedure call(RPC) to facilitate connection with the `crypto_wallet` and the Ethereum Blockchain network in Granache. The user of the program application operates through the Streamlit web app that provides functionality to create an Ethereum transaction and perform the following: 
 
-The program is developed in VSCode using python language **.py** file. The Python library makes it possible to utilize pandas, numpy and pathlib to build this Blockchain ledger for transaction verification. The design applies the model-fit-predict process to make a binary classification of whether a startup is successful or not.
- 
+- Generate a new Ethereum account instance by using the mnemonic seed phrase provided by Ganache.
+
+- Fetch and display the account balance associated with the Ethereum account address.
+
+- Calculate the total value of an Ethereum transaction, including the gas estimate, that pays a Fintech Finder candidate for their work.
+
+- Digitally sign a transaction that pays a Fintech Finder candidate, and sends this transaction to the Ganache blockchain.blocks, perform the proof of work consensus protocol, and validate blocks in the chain.   
+
+Blockchain ledger for transaction verification of the data in the ledger. 
 
 ![]()
 ![]() 
