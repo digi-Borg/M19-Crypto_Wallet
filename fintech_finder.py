@@ -29,7 +29,7 @@ import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
 from web3 import Web3
-from bip44 import Wallet
+
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 ################################################################################
 # Step 1:
@@ -88,10 +88,10 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 # Database of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
 # A single Ether is currently valued at $1,500
 candidate_database = {
-    "Lane": ["Lane", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "Images/lane.jpeg"],
-    "Ash": ["Ash", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
-    "Jo": ["Jo", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "Images/jo.jpeg"],
-    "Kendall": ["Kendall", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "Images/kendall.jpeg"]
+    "Lane": ["Lane", "0x245fB396fFA377716195ee20c76BBe5A219DFe49", "4.3", .20, "Images/lane.jpeg"],
+    "Ash": ["Ash", "0xC86AFFFEdA583Ea3CF9006b3f6eb3B6f2bA065dF", "5.0", .33, "Images/ash.jpeg"],
+    "Jo": ["Jo", "0xA37007A4Daf6878f3CE56E03E01e990b6B2c89bD", "4.7", .19, "Images/jo.jpeg"],
+    "Kendall": ["Kendall", "0xB75F849d62Bed6fC44f606f45A5217D353193953", "4.1", .16, "Images/kendall.jpeg"]
 }
 
 # A list of the FinTech Finder candidates first names
@@ -238,7 +238,7 @@ st.sidebar.markdown("## Total Wage in Ether")
 # Calculate total `wage` for the candidate by multiplying the candidate’s hourly
 # rate from the candidate database (`candidate_database[person][3]`) by the
 # value of the `hours` variable
-wage = (candidate_database[person][3]) * hours
+wage = (hourly_rate) * (hours) 
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
@@ -265,20 +265,20 @@ st.sidebar.write(wage)
 
 if st.sidebar.button("Send Transaction"):
 
-        # @TODO
-        # Call the `send_transaction` function and pass it 3 parameters:
-        # Your `account`, the `candidate_address`, and the `wage` as parameters
-        # Save the returned transaction hash as a variable named `transaction_hash`
-        transaction_hash = send_transaction(account, candidate_address, wage)
+    # @TODO
+    # Call the `send_transaction` function and pass it 3 parameters:
+    # Your `account`, the `candidate_address`, and the `wage` as parameters
+    # Save the returned transaction hash as a variable named `transaction_hash`
+    transaction_hash = send_transaction(w3, account, candidate_address, wage)
 
-        # Markdown for the transaction hash
-        st.sidebar.markdown("#### Validated Transaction Hash")
+    # Markdown for the transaction hash
+    st.sidebar.markdown("#### Validated Transaction Hash")
 
-        # Write the returned transaction hash to the screen
-        st.sidebar.write(transaction_hash)
+    # Write the returned transaction hash to the screen
+    st.sidebar.write(transaction_hash)
 
-        # Celebrate your successful payment
-        st.balloons()
+    # Celebrate your successful payment
+    st.balloons()
 
 # The function that starts the Streamlit application
 # Writes FinTech Finder candidates to the Streamlit page
@@ -304,7 +304,7 @@ get_people(w3)
 # would like to hire them for. (Remember, you do not have a lot of ether in
 # your account, so you cannot hire them for long!)
 
-# 4. Click the Send Transaction button to sign and send the transaction with
+# 4 Click the Send Transaction button to sign and send the transaction with
 # your Ethereum account information. If the transaction is successfully
 # communicated to Ganache, validated, and added to a block,
 # a resulting transaction hash code will be written to the Streamlit
