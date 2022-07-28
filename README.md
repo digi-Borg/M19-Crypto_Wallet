@@ -15,7 +15,7 @@ The code enables customers to send cryptocurrency payments to fintech profession
 ## Evaluation Results
 
 Review the transaction hash code associated with the validated Ethereum blockchain transaction.  In the 'Block' and 'Transaction' sections of Ganache menu bar are the reviews blockchain transaction details. Confirms of successfull transactions, are in the screenshots below:  
-### *Notice - All transactions refer to 2nd Block for Jo; 1st transaction of 2.0 `eth` made to account in previous workspace.* Confirms and addresses in Images folder from previous workspace.
+#### *Notice - All transactions refer to 2nd Block for Jo; 1st transaction of 2.0 `eth` made to account in previous workspace. Confirms and addresses in Images folder from previous workspace.*
 
 3. On the resulting webpage, select a candidate that you would like to hire from the appropriate drop-down menu. Then, enter the 'Number of Hours' that you would like to hire them for: 
 ![JoSelctCandidate](./Images/2ndSelctnJo_2022-07-27192031.png)
