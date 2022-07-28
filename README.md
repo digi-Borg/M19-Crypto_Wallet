@@ -18,28 +18,30 @@ Review the transaction hash code associated with the validated Ethereum blockcha
 #### *Notice - All transactions refer to 2nd Block for Jo; 1st transaction of 2.0 `eth` made to account in previous workspace. Confirms and addresses in Images folder from previous workspace.*
 
 3. On the resulting webpage, select a candidate that you would like to hire from the appropriate drop-down menu. Then, enter the 'Number of Hours' that you would like to hire them for: 
-![JoSelctCandidate](./Images/2ndSelctnJo_2022-07-27192031.png)
+    ![JoSelctCandidate](./Images/2ndSelctnJo_2022-07-27192031.png)
 
 4. Click the 'Send Transaction' button to sign and send the transaction with your Ethereum account information. Navigate to the Transactions section of Ganache: 
-![SendTxJo](./Images/2ndBlkTxJo_2022-07-27192109.png)
+    ![SendTxJo](./Images/2ndBlkTxJo_2022-07-27192109.png)
 
 - Take a screenshot of your address balance and history on Ganache. Save this screenshot to the README.md file of your GitHub repository for this Challenge assignment: 
-![Addr_Bal](./Images/2ndTxHistJo_2022-07-27192203.png) 
+    ![Addr_Bal](./Images/2ndTxHistJo_2022-07-27192203.png) 
 
-- *added Blockchain transactions history:*
-![BlockTxHistories](./Images/BlkTxHist_2022-07-27192235.png) 
 
 - Take a screenshot of the transaction details on Ganache. Save this screenshot to the README.md file of your GitHub repository for this Challenge assignment: 
-![TxHistory](./Images/TxLdgeHist_2022-07-27192356.png) 
+    ![TxHistory](./Images/TxLdgeHist_2022-07-27192356.png) 
 
-- *added Block 2 transaction ledger details for Jo:* 
-![2ndBlockTxDetails](./Images/Blk2_TxLdgrJo_2022-07-27192256.png)
+- *added Blockchain transactions history:*
+    ![BlockTxHistories](./Images/BlkTxHist_2022-07-27192235.png) 
 
 
 5. Return to the original transaction, and click the transaction’s To address.
 - Take a screenshot of the recipient’s address balance and history in the Ganache application. Save this screenshot to the README.md file of your GitHub repository for this Challenge assignment.
 
- ![RecpntJoAddrBalTxDetails](./Images/TxLdgr_Blk2_2022-07-27192430.png)
+    ![RecpntJoAddrBalTxDetails](./Images/TxLdgr_Blk2_2022-07-27192430.png) 
+
+- *added Block 2 transaction ledger details for Jo:* 
+    ![2ndBlockTxDetails](./Images/Blk2_TxLdgrJo_2022-07-27192256.png) 
+
 
 ---
 ## Technologies
@@ -88,11 +90,11 @@ from web3 import Account                        # Python function for accessing 
 from web3 import middleware                     # manages communication between the program and the Ethereum client
 from web3.gas_strategies.time_based import medium_gas_price_strategy          # transaction mined within 5 minutes 
 ```
-libraries and mdules for fintech_finder.py: 
+libraries and modules for fintech_finder.py: 
 ```
-import streamlit as st                              # Python library for building web interfaces for Python apps    from dataclasses import dataclass
+import streamlit as st                                # Python library for building web interfaces for Python apps  from dataclasses import dataclass
 from typing import Any, List
-from web3 import Web3                               # a SDK library that allows communication between Ethereum nodes
+from web3 import Web3                                 # SDK library that allows communication between Ethereum nodes
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))   # connects to Web3 and Mnemonic provider Ganache  blockchain
 ```
 
