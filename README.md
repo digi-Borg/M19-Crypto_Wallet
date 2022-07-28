@@ -71,7 +71,6 @@ Before running the applications open your terminal to install and check for your
 * [streamlit](https://docs.streamlit.io/library/get-started/installation)
 
 
-
 ```
 python libraries
 pip install web3==5.17                          # connects and performs operations on Ethereum-based blockchains
@@ -92,7 +91,8 @@ from web3.gas_strategies.time_based import medium_gas_price_strategy          # 
 ```
 libraries and modules for fintech_finder.py: 
 ```
-import streamlit as st                                # Python library for building web interfaces for Python apps  from dataclasses import dataclass
+import streamlit as st                                # Python library for building web interfaces for Python apps 
+from dataclasses import dataclass
 from typing import Any, List
 from web3 import Web3                                 # SDK library that allows communication between Ethereum nodes
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))   # connects to Web3 and Mnemonic provider Ganache  blockchain
