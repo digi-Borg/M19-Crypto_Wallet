@@ -120,7 +120,7 @@ This application is launched from the VSCode terminal utilizing the above import
 
 ### 4. Digitally sign a transaction that pays a Fintech Finder candidate, and sends this transaction to the Ganache blockchain.blocks, perform the proof of work consensus protocol, and validate blocks in the chain. 
 
- - click the 'Send Transaction' button to sign and send the transaction with your Ethereum account information. If the transaction is successfully communicated to Ganache, validated, and added to a block, a resulting transaction hash code will be written to the Streamlit application sidebar.
+- click the 'Send Transaction' button to sign and send the transaction with your Ethereum account information. If the transaction is successfully communicated to Ganache, validated, and added to a block, a resulting transaction hash code will be written to the Streamlit application sidebar.
 
 - Navigate to the Ganache menu bar in the upper left to select 'Blocks' and then the 'Tranactions' pages to get transaction details.  
 
@@ -145,7 +145,8 @@ Dana Hayes: nydane1@gmail.com
 
 ---
 
-## License
+## License  
+
 Columbia U. Engineering 
 --
 [BSD 2-Clause LicenseCopyright (c) 2022, digi-Borg
