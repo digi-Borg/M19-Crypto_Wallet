@@ -143,6 +143,7 @@ fintech_finder.py
 *Provided to you by digi-Borg FinTek*, 
 Dana Hayes: nydane1@gmail.com
 
+
 ---
 
 ## License  
